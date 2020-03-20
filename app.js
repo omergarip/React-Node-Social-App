@@ -1,4 +1,5 @@
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv');
 const express = require('express');
 const expressValidator = require('express-validator');
@@ -23,6 +24,7 @@ const authRoutes = require('./routes/auth');
 
 // Middleware
 app.use(bodyParser.json());
+app.use(cookieParser());
 app.use(expressValidator());
 app.use(morgan('dev'));
 app.use('/', postRoutes);
